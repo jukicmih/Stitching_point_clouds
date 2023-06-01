@@ -58,7 +58,10 @@ print(suma)
 centar = point_cloud.get_center()
 #udaljenost = calculate_earth_mover_distances_from_point_clouds(np.asarray(point_cloud.points), np.asarray(point_cloud2.points))
 
-cut_pcd = _cull_point_cloud_in_torus_around_center(point_cloud, centar, 18,20)
+# cut_pcd = _cull_point_cloud_in_torus_around_center(point_cloud, centar, 18,20)
 # cut_pcd.points = open3d.utility.Vector3dVector(np.array(cut_pcd.points)+np.array([0, 50, 0]))
 #open3d.visualization.draw_geometries([point_cloud, cut_pcd])
-visualize(cut_pcd)
+# visualize(cut_pcd)
+downsample_rate = 10
+downsampled_source = point_cloud.points[0::downsample_rate]
+downsampled_source = point_cloud2.points[0::downsample_rate]
