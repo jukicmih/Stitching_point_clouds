@@ -1,5 +1,7 @@
 import scipy.io
 import io
+import open3d
+
 def read_pcd(file_path, filename):
 
     with io.open(file_path + "/" + filename, "rb") as f:
@@ -12,4 +14,7 @@ def read_pcd(file_path, filename):
         else:
             point_cloud = mat_contents["lidarPts"]
 
-    return point_cloud
+    new_pcd = open3d.geometry.PointCloud()
+    new_pcd.points = open3d.utility.Vector3dVector(point_cloud)
+
+    return new_pcd
