@@ -10,6 +10,7 @@ def get_max_point_distance(source_points, target_points, source_normals) :
         # dobivamo polje ptp_distances u kojem je za svaku tocku iz targeta!!! spremljeno k (tj jedna) najmanjih
         # udaljenosti izmedu njih i tocaka iz source-a, a indeksi tih tocaka(iz sourcea) su u next_point_indices
     source_normals_np = np.asarray(source_normals)
+
     source_points_np = np.asarray(source_points)
     point_to_plane_distance = np.abs(
         np.sum(

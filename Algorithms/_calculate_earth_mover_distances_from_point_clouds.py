@@ -2,7 +2,7 @@ from scipy.spatial.distance import cdist
 from scipy.optimize import linear_sum_assignment
 
 
-def calculate_earth_mover_distances_from_point_clouds(point_cloud_1, point_cloud_2):
+def _calculate_earth_mover_distances_from_point_clouds(point_cloud_1, point_cloud_2):
     distance = cdist(point_cloud_1, point_cloud_2)
          # racuna euklidske udaljenosti izmedu tocaka iz dva point clouda i sprema ih u matricu distance t.d.
          #   distance(i, j) = ||point_cloud_1(i) - point_cloud_2(j)||_2
