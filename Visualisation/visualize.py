@@ -1,7 +1,9 @@
-import open3d
-def visualize(points):
+def visualize(point_cloud):
 
-    new_pcd = open3d.geometry.PointCloud()
-    new_pcd.points = open3d.utility.Vector3dVector(points)
-    open3d.visualization.draw_geometries([new_pcd])
+    import open3d
+
+    mesh_frame = open3d.geometry.TriangleMesh.create_coordinate_frame(size=10,
+                                                                      origin=point_cloud.get_center())
+    open3d.visualization.draw_geometries([point_cloud, mesh_frame])
+
 
